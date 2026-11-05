@@ -1,0 +1,29 @@
+:root{--navy:#1f3f8f;--bg:#f3f5fa;--line:#c5cee2;--text:#1d2433}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Cairo",Tahoma,Arial,sans-serif;line-height:1.6}
+.wrap{max-width:900px;margin:0 auto;padding:0 16px}
+.top{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+.top .wrap:first-child{display:flex;align-items:center;justify-content:space-between;padding-top:12px;padding-bottom:8px;gap:12px}
+h1{font-size:1.25rem;margin:0;color:var(--navy)}
+.btn{font:inherit;font-weight:600;background:var(--navy);color:#fff;border:0;border-radius:8px;padding:8px 16px;cursor:pointer}
+.btn:hover{background:#17306f}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:10px;scrollbar-width:thin}
+.tab{font:inherit;white-space:nowrap;background:#eef1f8;color:var(--navy);border:1px solid var(--line);border-radius:999px;padding:5px 16px;cursor:pointer}
+.tab[aria-selected=true]{background:var(--navy);color:#fff;border-color:var(--navy)}
+.status{text-align:center;padding:40px 0;color:#667}
+.notice{background:#fff7e0;border:1px solid #ecd48a;border-radius:8px;padding:10px 14px;margin-top:16px;font-size:.9rem}
+.page{background:#fff;border:1px solid var(--line);border-radius:10px;margin:20px 0;padding:14px;box-shadow:0 1px 4px rgba(20,40,90,.07);overflow-x:auto}
+.page table{border-collapse:collapse;table-layout:fixed;width:100%;min-width:560px}
+.page td{border:1px solid var(--line);padding:6px 8px;vertical-align:middle;word-wrap:break-word;overflow-wrap:anywhere;white-space:pre-wrap;font-size:.92rem}
+.page td.e{border-color:transparent}
+@page{size:A4 portrait;margin:12mm}
+@media print{
+  body{background:#fff}
+  .no-print{display:none!important}
+  .wrap{max-width:none;padding:0}
+  .page{border:0;box-shadow:0;margin:0;padding:0;border-radius:0;overflow:visible;break-after:page;page-break-after:always}
+  .page:last-child{break-after:auto;page-break-after:auto}
+  .page table{min-width:0;font-size:10pt}
+  .page td{font-size:10pt;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  tr{break-inside:avoid}
+}
